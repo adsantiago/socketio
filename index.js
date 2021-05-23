@@ -19,6 +19,12 @@ const io = socketIO(server);
 
 io.on('connection', (socket) => {
     console.log('New connection', socket.id);
+
+    socket.on('username', () => {
+        let user_name = socket.id;
+        io.sockets.emit('username', user_name);
+    });
+
     socket.on('users_num', () => {
         let act_users = socket.client.conn.server.clientsCount;
         io.sockets.emit('users_num', act_users);
@@ -27,4 +33,8 @@ io.on('connection', (socket) => {
         let act_users = socket.client.conn.server.clientsCount;
         io.sockets.emit('users_num', act_users);
     });    
+
+    socket.on('message_send', (data, id) => {
+        io.sockets.emit('message_send', data, socket.id);
+    });
 });
