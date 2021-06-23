@@ -1,5 +1,6 @@
 const socket = io()
 //console.log('It works');
+let user_mes = document.getElementById('user');
 let btn = document.getElementById('send');
 let message_info = document.getElementById('message');
 
@@ -25,12 +26,16 @@ socket.on('users_num', function(act_users){
 
 socket.on('username', function(user_name){
     //user.innerHTML = '';
-    user.innerHTML += `<p>${user_name}: Se ha unido</p>`
+    user.innerHTML += `<p class="mt-0 mb-0">${user_name}: Se ha unido</p>`
+    user_mes.scrollTop = user_mes.scrollHeight;
 });
 
 socket.on('message_send', function(data, id){
-    user.innerHTML += `<p>
+    user.innerHTML += `<p class="mt-0 mb-0">
         <strong>${id}</strong>: ${data.message}
     </p>`
+    user_mes.scrollTop = user_mes.scrollHeight;
 });
+
+
 
