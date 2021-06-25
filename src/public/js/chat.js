@@ -10,7 +10,8 @@ btn.addEventListener('click', function(){
     socket.emit('message_send', {
         message: message_info.value
     });
-    console.log(message);
+    message.value = `` // Clean the message after to send it
+    //console.log(message);
 });
 
 function enterpage(){
@@ -25,7 +26,6 @@ socket.on('users_num', function(act_users){
 });
 
 socket.on('username', function(user_name){
-    //user.innerHTML = '';
     user.innerHTML += `<p class="mt-0 mb-0">${user_name}: Se ha unido</p>`
     user_mes.scrollTop = user_mes.scrollHeight;
 });

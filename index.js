@@ -21,7 +21,8 @@ io.on('connection', (socket) => {
     console.log('New connection', socket.id);
 
     socket.on('username', () => {
-        let user_name = socket.id;
+        // In this zone receive the username 
+        let user_name = socket.id; // Change socket.id (example user connection) for the username
         io.sockets.emit('username', user_name);
     });
 
