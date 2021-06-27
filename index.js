@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 //Setting
-app.set('port', process.env.PORT || 4001);
+app.set('port', process.env.PORT || 4001); // Change port here
 
 //Static files
 app.use(express.static(path.join(__dirname, 'src', 'public'))); 
