@@ -1,0 +1,18 @@
+input{
+    box-sizing: border-box;
+}
+
+.chat-global{
+    display: block;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-y: hidden;
+}
+
+body{
+    background-color: #dc143b;
+}
+
+.white-c{
+    color: white;
+}
