@@ -2,10 +2,10 @@
   "name": "proyect-socketio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node index",
+    "dev": "lite-server"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,7 @@
     "socket.io": "^4.1.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "lite-server": "^2.6.1"
   }
 }
